@@ -43,9 +43,9 @@ class Pattern1TheoriesEquivalentTest {
             Integer userId, String userName, String userPass) {
         // Arrange（準備）：実際のDBへ接続しないようにUserDaoのモックを作成します
         UserDao userDao = mock(UserDao.class);
-        // 作成したモックをコンストラクタからServiceへ渡します
+        // 作成したモックをコンストラクタからServiceへ渡します *dummyの作成
         UserServiceImpl service = new UserServiceImpl(userDao);
-        // このテストで返されることを期待するUserを作成します
+        // このテストで返されることを期待するUserを作成します　*dummyが返す値
         User expected = new User(userId, userName, userPass);
 
         // 指定したユーザー名とパスワードが渡されたら、期待するユーザーを返すよう設定します
